@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RBProject version="2019r1.1" FormatVersion="2" MinIDEVersion="20070100">
+<block type="Project" ID="0">
+ <ProjectSavedInVers>2019.011</ProjectSavedInVers>
+ <MajorVersion>1</MajorVersion>
+ <MinorVersion>0</MinorVersion>
+ <SubVersion>0</SubVersion>
+ <Release>0</Release>
+ <NonRelease>0</NonRelease>
+ <Region></Region>
+ <ShortVersion></ShortVersion>
+ <LongVersion></LongVersion>
+ <InfoVersion></InfoVersion>
+ <AutoIncVersion>0</AutoIncVersion>
+ <DefaultViewID>1948000255</DefaultViewID>
+ <ProjectType>0</ProjectType>
+ <DefaultLanguage>0</DefaultLanguage>
+ <CurrentLanguage>0</CurrentLanguage>
+ <DefaultEncoding>0</DefaultEncoding>
+ <BuildFlags>18688</BuildFlags>
+ <UseBuildsFolder>1</UseBuildsFolder>
+ <WebApp>0</WebApp>
+ <Icon>
+ </Icon>
+ <MacCreator></MacCreator>
+ <BuildCarbonMachOName>My Application</BuildCarbonMachOName>
+ <BundleIdentifier>com.mycompany.myapp</BundleIdentifier>
+ <WinMDICaption></WinMDICaption>
+ <BuildWinName>My Application.exe</BuildWinName>
+ <BuildWinMDI>0</BuildWinMDI>
+ <BuildWinCompanyName>My Company</BuildWinCompanyName>
+ <BuildWinProductName></BuildWinProductName>
+ <BuildWinInternalName></BuildWinInternalName>
+ <BuildWinFileDescription></BuildWinFileDescription>
+ <UseGDIPlus>0</UseGDIPlus>
+ <HiDPI>1</HiDPI>
+ <DarkMode>1</DarkMode>
+ <BuildLinuxX86Name>MyApplication</BuildLinuxX86Name>
+ <DebuggerCommandLine></DebuggerCommandLine>
+ <LinuxArchitecture>1</LinuxArchitecture>
+ <OptimizationLevel>0</OptimizationLevel>
+ <CopyWindowsRedist>0</CopyWindowsRedist>
+ <WindowsVersions>{35138b9a-5d96-4fbd-8e2d-a2440225f93a}|{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}|{1f676c76-80e1-4239-95bb-83d0f6d0da78}|{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}</WindowsVersions>
+ <WindowsRunAs>0</WindowsRunAs>
+</block>
+<block type="Module" ID="1121118207">
+ <ObjName>App</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+ <IsClass>1</IsClass>
+ <Superclass>Application</Superclass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <IsApplicationObject>1</IsApplicationObject>
+ <Compatibility></Compatibility>
+ <PropertyVal Name="MenuBar">1914593279</PropertyVal>
+ <ViewBehavior>
+ </ViewBehavior>
+ <Constant>
+  <ItemName>kFileQuitShortcut</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1245722623</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>0</ItemType>
+  <ItemDef></ItemDef>
+  <ItemFlags>0</ItemFlags>
+  <ConstantInstance>
+   <ItemPlatform>1</ItemPlatform>
+   <ItemLanguage>0</ItemLanguage>
+   <ItemDef>Cmd+Q</ItemDef>
+  </ConstantInstance>
+  <ConstantInstance>
+   <ItemPlatform>5</ItemPlatform>
+   <ItemLanguage>0</ItemLanguage>
+   <ItemDef>Ctrl+Q</ItemDef>
+  </ConstantInstance>
+ </Constant>
+ <Constant>
+  <ItemName>kFileQuit</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>89051135</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>0</ItemType>
+  <ItemDef>&amp;Quit</ItemDef>
+  <ItemFlags>0</ItemFlags>
+  <ConstantInstance>
+   <ItemPlatform>2</ItemPlatform>
+   <ItemLanguage>0</ItemLanguage>
+   <ItemDef>E&amp;xit</ItemDef>
+  </ConstantInstance>
+ </Constant>
+ <Constant>
+  <ItemName>kEditClear</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1912166399</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>0</ItemType>
+  <ItemDef>&amp;Delete</ItemDef>
+  <ItemFlags>0</ItemFlags>
+  <ConstantInstance>
+   <ItemPlatform>2</ItemPlatform>
+   <ItemLanguage>0</ItemLanguage>
+   <ItemDef>&amp;Delete</ItemDef>
+  </ConstantInstance>
+  <ConstantInstance>
+   <ItemPlatform>5</ItemPlatform>
+   <ItemLanguage>0</ItemLanguage>
+   <ItemDef>&amp;Delete</ItemDef>
+  </ConstantInstance>
+ </Constant>
+</block>
+<block type="Window" ID="1948000255">
+ <ObjName>Window1</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+ <IsClass>1</IsClass>
+ <Superclass>Window</Superclass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <Compatibility></Compatibility>
+ <Method>
+  <ItemName>HexToPoints</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>804806655</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function HexToPoints(height As double, row As Double, col As double) As double()</SourceLine>
+   <SourceLine>// Start with the leftmost corner of the upper left hexagon.</SourceLine>
+   <SourceLine>Dim width as double = HexWidth(height)</SourceLine>
+   <SourceLine>Dim y as double = height/2</SourceLine>
+   <SourceLine>Dim x as double = 0</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// Move down the required number of rows.</SourceLine>
+   <SourceLine>y = y + row * height</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// If the column is odd, move down half a hex more.</SourceLine>
+   <SourceLine>If (col mod 2) = 1 then</SourceLine>
+   <SourceLine>y = y + height /2</SourceLine>
+   <SourceLine>End if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// Move over for the column number.</SourceLine>
+   <SourceLine>x = x + col * (width * 0.75)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim pointF() as double</SourceLine>
+   <SourceLine>pointF.Append 0 //1-based array</SourceLine>
+   <SourceLine>pointF.Append x</SourceLine>
+   <SourceLine>pointF.Append y</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pointF.Append (x + width * 0.25)</SourceLine>
+   <SourceLine>pointF.Append (y - height / 2)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pointF.Append (x + width * 0.75)</SourceLine>
+   <SourceLine>pointF.Append (y - height / 2)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pointF.Append  (x + width)</SourceLine>
+   <SourceLine>pointF.Append y</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pointF.Append (x + width * 0.75)</SourceLine>
+   <SourceLine>pointF.Append (y + height / 2)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pointF.Append (x + width * 0.25)</SourceLine>
+   <SourceLine>pointF.Append (y + height / 2)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Return PointF</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>height As double, row As Double, col As double</ItemParams>
+  <ItemResult>double()</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>HexWidth</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>198778879</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function HexWidth(height as double) As double</SourceLine>
+   <SourceLine>//Return the width of the hexagon</SourceLine>
+   <SourceLine>return (4 * (height/2/Sqrt(3)))</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>height as double</ItemParams>
+  <ItemResult>double</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>DrawCoordinates</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1791092735</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub DrawCoordinates(g as graphics, Height as Double, row as Integer, col as Integer)</SourceLine>
+   <SourceLine>//Create the text to be written</SourceLine>
+   <SourceLine>Dim MyCoord as String = "(" + row.ToText + "," + col.ToText + ")"</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>//Calculate coordinates and centre text</SourceLine>
+   <SourceLine>Dim Width as double = HexWidth(Height)</SourceLine>
+   <SourceLine>Dim Centre as Double = MyCoord.Len*2</SourceLine>
+   <SourceLine>Dim X1 as Double = col * (Width * 0.75) + width/2-Centre</SourceLine>
+   <SourceLine>Dim Y1 as Double = row + Width/2-2 //(-2 is half the text height)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// Move down the required number of rows.</SourceLine>
+   <SourceLine>Y1 = Y1 + row * Height</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// If the column is odd, move down half a hex more.</SourceLine>
+   <SourceLine>if (col mod 2) = 1 then</SourceLine>
+   <SourceLine>Y1 = Y1 + Height /2</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>//Draw the text</SourceLine>
+   <SourceLine>g.DrawString(MyCoord, X1, Y1)</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>g as graphics, Height as Double, row as Integer, col as Integer</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>PointToHex</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>462325759</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub PointToHex(X as Double, Y as Double, Height as Double, ByRef Row as Integer, ByRef Col as Integer)</SourceLine>
+   <SourceLine>// Find the test rectangle containing the point</SourceLine>
+   <SourceLine>Dim Width as double = HexWidth(Height)</SourceLine>
+   <SourceLine>Col = (X / (Width * 0.75))</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>If (Col mod 2 = 0) Then</SourceLine>
+   <SourceLine>Row = (Y / Height)</SourceLine>
+   <SourceLine>Else</SourceLine>
+   <SourceLine>Row = ((Y - Height / 2) / height)</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine>// Find the test area</SourceLine>
+   <SourceLine>Dim testx as Double = Col * Width * 0.75</SourceLine>
+   <SourceLine>Dim testy as Double = row * Height</SourceLine>
+   <SourceLine>If (Col mod 2 = 1) Then</SourceLine>
+   <SourceLine> testy = testy + (Height / 2)</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine>// See if the point is above or</SourceLine>
+   <SourceLine>// below the test hexagon on the left</SourceLine>
+   <SourceLine>Dim is_above as Boolean = false</SourceLine>
+   <SourceLine>Dim is_below as Boolean = false</SourceLine>
+   <SourceLine>Dim dx as Double = x - testx</SourceLine>
+   <SourceLine>if (dx &lt; Width / 4) Then</SourceLine>
+   <SourceLine>Dim dy as Double = y - (testy + height / 2)</SourceLine>
+   <SourceLine>If (dx &lt; 0.001) Then</SourceLine>
+   <SourceLine>// The point is on the left edge of the test rectangle</SourceLine>
+   <SourceLine>If (dy &lt; 0) Then </SourceLine>
+   <SourceLine>is_above = true</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine>If (dy &gt; 0) Then </SourceLine>
+   <SourceLine>is_below = true</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine>Elseif (dy &lt; 0) Then</SourceLine>
+   <SourceLine>// See if the point is above the test hexagon</SourceLine>
+   <SourceLine>If (-dy / dx &gt; Sqrt(3)) Then </SourceLine>
+   <SourceLine>is_above = true</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>// See if the point is below the test hexagon</SourceLine>
+   <SourceLine>If ((dy / dx) &gt; Sqrt(3)) Then </SourceLine>
+   <SourceLine>is_below = true</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// Adjust the row and column if necessary</SourceLine>
+   <SourceLine>If (is_above) Then</SourceLine>
+   <SourceLine>If (col Mod 2 = 0) Then </SourceLine>
+   <SourceLine>row=row-1</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine>col=col-1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>ElseIf (is_below) Then</SourceLine>
+   <SourceLine>If (col mod 2 = 1) Then</SourceLine>
+   <SourceLine>row=row+1</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine>col=col-1</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine>//Add to selected hexagons</SourceLine>
+   <SourceLine>SelectPoints.Append(row)</SourceLine>
+   <SourceLine>SelectPoints.Append(col)</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>X as Double, Y as Double, Height as Double, ByRef Row as Integer, ByRef Col as Integer</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Property>
+  <ItemName>SelectPoints()</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>2132967423</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>SelectPoints() As Integer</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>SelectPoints() As Integer</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>HexHeight</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>836395007</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>HexHeight As Integer</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>HexHeight As Integer</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <PropertyVal Name="MenuBarVisible">True</PropertyVal>
+ <PropertyVal Name="MenuBar">1914593279</PropertyVal>
+ <PropertyVal Name="Backdrop">0</PropertyVal>
+ <PropertyVal Name="BackColor">16777215</PropertyVal>
+ <PropertyVal Name="HasBackColor">False</PropertyVal>
+ <PropertyVal Name="Visible">True</PropertyVal>
+ <PropertyVal Name="Placement">0</PropertyVal>
+ <PropertyVal Name="LiveResize">True</PropertyVal>
+ <PropertyVal Name="ImplicitInstance">True</PropertyVal>
+ <PropertyVal Name="FullScreen">False</PropertyVal>
+ <PropertyVal Name="MacProcID">0</PropertyVal>
+ <PropertyVal Name="Composite">False</PropertyVal>
+ <PropertyVal Name="FullScreenButton">False</PropertyVal>
+ <PropertyVal Name="MinimizeButton">True</PropertyVal>
+ <PropertyVal Name="MaximizeButton">True</PropertyVal>
+ <PropertyVal Name="Resizeable">True</PropertyVal>
+ <PropertyVal Name="CloseButton">True</PropertyVal>
+ <PropertyVal Name="Title">Hexagon</PropertyVal>
+ <PropertyVal Name="Frame">0</PropertyVal>
+ <PropertyVal Name="MaxHeight">32000</PropertyVal>
+ <PropertyVal Name="MaxWidth">32000</PropertyVal>
+ <PropertyVal Name="MinHeight">64</PropertyVal>
+ <PropertyVal Name="MinWidth">64</PropertyVal>
+ <PropertyVal Name="Height">440</PropertyVal>
+ <PropertyVal Name="Width">440</PropertyVal>
+ <ViewBehavior>
+  <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+   <EditorType>String</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Interfaces</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+   <EditorType>String</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+   <EditorType>String</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Width</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Size</PropertyGroup>
+   <PropertyValue>600</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Height</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Size</PropertyGroup>
+   <PropertyValue>400</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MinWidth</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Size</PropertyGroup>
+   <PropertyValue>64</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MinHeight</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Size</PropertyGroup>
+   <PropertyValue>64</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MaxWidth</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Size</PropertyGroup>
+   <PropertyValue>32000</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MaxHeight</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Size</PropertyGroup>
+   <PropertyValue>32000</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Frame</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Frame</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+   <EditorType>Enum</EditorType>
+   <Enumeration>
+    <ItemDef>0 - Document</ItemDef>
+    <ItemDef>1 - Movable Modal</ItemDef>
+    <ItemDef>2 - Modal Dialog</ItemDef>
+    <ItemDef>3 - Floating Window</ItemDef>
+    <ItemDef>4 - Plain Box</ItemDef>
+    <ItemDef>5 - Shadowed Box</ItemDef>
+    <ItemDef>6 - Rounded Window</ItemDef>
+    <ItemDef>7 - Global Floating Window</ItemDef>
+    <ItemDef>8 - Sheet Window</ItemDef>
+    <ItemDef>9 - Metal Window</ItemDef>
+    <ItemDef>11 - Modeless Dialog</ItemDef>
+   </Enumeration>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Title</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Frame</PropertyGroup>
+   <PropertyValue>Untitled</PropertyValue>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>CloseButton</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Frame</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Resizeable</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Frame</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MaximizeButton</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Frame</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MinimizeButton</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Frame</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>FullScreenButton</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Frame</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Composite</ObjName>
+   <PropertyGroup>OS X (Carbon)</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MacProcID</ObjName>
+   <PropertyGroup>OS X (Carbon)</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>FullScreen</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>ImplicitInstance</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LiveResize</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Placement</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+   <EditorType>Enum</EditorType>
+   <Enumeration>
+    <ItemDef>0 - Default</ItemDef>
+    <ItemDef>1 - Parent Window</ItemDef>
+    <ItemDef>2 - Main Screen</ItemDef>
+    <ItemDef>3 - Parent Window Screen</ItemDef>
+    <ItemDef>4 - Stagger</ItemDef>
+   </Enumeration>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Visible</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>HasBackColor</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Background</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>BackColor</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Background</PropertyGroup>
+   <PropertyValue>&amp;hFFFFFF</PropertyValue>
+   <ItemType>Color</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Backdrop</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Background</PropertyGroup>
+   <ItemType>Picture</ItemType>
+   <EditorType>Picture</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MenuBar</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Menus</PropertyGroup>
+   <ItemType>MenuBar</ItemType>
+   <EditorType>MenuBar</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MenuBarVisible</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Deprecated</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>HexHeight</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+ </ViewBehavior>
+ <ControlBehavior>
+  <Superclass>Canvas</Superclass>
+  <HookInstance>
+   <ItemName>Paint</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>1475348479</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Paint(g As Graphics, areas() As REALbasic.Rect)</SourceLine>
+    <SourceLine>//Height of the hexagon</SourceLine>
+    <SourceLine>HexHeight = 68</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>Dim x, y as Integer</SourceLine>
+    <SourceLine>//Draw Blue selected hexagonsS</SourceLine>
+    <SourceLine>Dim MySelectPoints() as Double</SourceLine>
+    <SourceLine>For x = 0 to SelectPoints.Ubound Step 2</SourceLine>
+    <SourceLine>MySelectPoints = HexToPoints(HexHeight, SelectPoints(x), SelectPoints(x+1))</SourceLine>
+    <SourceLine>g.ForeColor = RGB(173, 216, 230) //Light Blue</SourceLine>
+    <SourceLine>g.FillPolygon(MySelectPoints)</SourceLine>
+    <SourceLine>g.ForeColor = RGB(0, 0, 0) //Black</SourceLine>
+    <SourceLine>DrawCoordinates(g, HexHeight, SelectPoints(x), SelectPoints(x+1))</SourceLine>
+    <SourceLine>Next x</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>//Draw black unselected hexagons</SourceLine>
+    <SourceLine>Dim points() As Double</SourceLine>
+    <SourceLine>For x = 0 to 4</SourceLine>
+    <SourceLine>For y = 0 to 4</SourceLine>
+    <SourceLine>points = HexToPoints(HexHeight,x,y)</SourceLine>
+    <SourceLine>g.ForeColor = RGB(0, 0, 0) //Black</SourceLine>
+    <SourceLine>g.DrawPolygon(points)</SourceLine>
+    <SourceLine>DrawCoordinates(g, HexHeight, x, y)</SourceLine>
+    <SourceLine>Next y</SourceLine>
+    <SourceLine>Next x</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <ItemName>MouseDown</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>522221567</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Function MouseDown(X As Integer, Y As Integer) As Boolean</SourceLine>
+    <SourceLine>Dim row, col as Integer</SourceLine>
+    <SourceLine>PointToHex(X, Y, HexHeight, row, col)</SourceLine>
+    <SourceLine>LblHexagon.Text = "(" + row.ToText + "," + col.ToText + ")"</SourceLine>
+    <SourceLine>me.Invalidate</SourceLine>
+    <SourceLine>End Function</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>Label</Superclass>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>Label</Superclass>
+ </ControlBehavior>
+ <Control>
+  <ControlClass>Canvas</ControlClass>
+  <ItemName>Canvas</ItemName>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="Transparent">True</PropertyVal>
+  <PropertyVal Name="EraseBackground">True</PropertyVal>
+  <PropertyVal Name="DoubleBuffer">False</PropertyVal>
+  <PropertyVal Name="AcceptTabs">False</PropertyVal>
+  <PropertyVal Name="AcceptFocus">False</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="UseFocusRing">True</PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Backdrop">0</PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="TabStop">True</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="TabIndex">0</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="Height">400</PropertyVal>
+  <PropertyVal Name="Width">400</PropertyVal>
+  <PropertyVal Name="Top">20</PropertyVal>
+  <PropertyVal Name="Left">20</PropertyVal>
+  <PropertyVal Name="Scope">0</PropertyVal>
+  <PropertyVal Name="Super">Canvas</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="Name">Canvas1</PropertyVal>
+  <ControlIndex>0</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>802969599</PartID>
+ </Control>
+ <Control>
+  <ControlClass>Label</ControlClass>
+  <ItemName>Label</ItemName>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="DataField"></PropertyVal>
+  <PropertyVal Name="DataSource"></PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="TextUnit">0</PropertyVal>
+  <PropertyVal Name="TextSize">0.0e+</PropertyVal>
+  <PropertyVal Name="TextFont">Consolas</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Transparent">False</PropertyVal>
+  <PropertyVal Name="TextColor">0</PropertyVal>
+  <PropertyVal Name="TextAlign">2</PropertyVal>
+  <PropertyVal Name="Text">Hexagon:</PropertyVal>
+  <PropertyVal Name="Selectable">False</PropertyVal>
+  <PropertyVal Name="Multiline">False</PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="TabStop">True</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="TabIndex">1</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="Height">20</PropertyVal>
+  <PropertyVal Name="Width">100</PropertyVal>
+  <PropertyVal Name="Top">420</PropertyVal>
+  <PropertyVal Name="Left">97</PropertyVal>
+  <PropertyVal Name="Scope">0</PropertyVal>
+  <PropertyVal Name="Super">Label</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="Name">Label1</PropertyVal>
+  <ControlIndex>1</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>864380927</PartID>
+ </Control>
+ <Control>
+  <ControlClass>Label</ControlClass>
+  <ItemName>Label</ItemName>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="DataField"></PropertyVal>
+  <PropertyVal Name="DataSource"></PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="TextUnit">0</PropertyVal>
+  <PropertyVal Name="TextSize">0.0e+</PropertyVal>
+  <PropertyVal Name="TextFont">Consolas</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Transparent">False</PropertyVal>
+  <PropertyVal Name="TextColor">0</PropertyVal>
+  <PropertyVal Name="TextAlign">0</PropertyVal>
+  <PropertyVal Name="Text">(X,Y)</PropertyVal>
+  <PropertyVal Name="Selectable">False</PropertyVal>
+  <PropertyVal Name="Multiline">False</PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="TabStop">True</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="TabIndex">2</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="Height">20</PropertyVal>
+  <PropertyVal Name="Width">100</PropertyVal>
+  <PropertyVal Name="Top">420</PropertyVal>
+  <PropertyVal Name="Left">209</PropertyVal>
+  <PropertyVal Name="Scope">0</PropertyVal>
+  <PropertyVal Name="Super">Label</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="Name">LblHexagon</PropertyVal>
+  <ControlIndex>2</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>236165119</PartID>
+ </Control>
+</block>
+<block type="Menu" ID="1914593279">
+ <ObjName>MainMenuBar</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+ <MenuItem>
+  <ItemSpecialMenu>0</ItemSpecialMenu>
+  <ItemName>FileMenu</ItemName>
+  <ItemText>&amp;File</ItemText>
+  <ItemIndex>-2147483648</ItemIndex>
+  <ItemShortcut></ItemShortcut>
+  <MenuAutoEnable>1</MenuAutoEnable>
+  <TextEncoding>134217984</TextEncoding>
+  <MenuItemVisible>1</MenuItemVisible>
+  <ItemFlags>0</ItemFlags>
+  <Superclass>MenuItem</Superclass>
+  <MenuItem>
+   <ItemSpecialMenu>0</ItemSpecialMenu>
+   <ItemName>FileQuit</ItemName>
+   <ItemText>#App.kFileQuit</ItemText>
+   <ItemIndex>-2147483648</ItemIndex>
+   <ItemShortcut>#App.kFileQuitShortcut</ItemShortcut>
+   <MenuShortcut>#App.kFileQuitShortcut</MenuShortcut>
+   <MenuAutoEnable>1</MenuAutoEnable>
+   <TextEncoding>134217984</TextEncoding>
+   <MenuItemVisible>1</MenuItemVisible>
+   <ItemFlags>0</ItemFlags>
+   <Superclass>QuitMenuItem</Superclass>
+  </MenuItem>
+ </MenuItem>
+ <MenuItem>
+  <ItemSpecialMenu>0</ItemSpecialMenu>
+  <ItemName>EditMenu</ItemName>
+  <ItemText>&amp;Edit</ItemText>
+  <ItemIndex>-2147483648</ItemIndex>
+  <ItemShortcut></ItemShortcut>
+  <MenuAutoEnable>1</MenuAutoEnable>
+  <TextEncoding>134217984</TextEncoding>
+  <MenuItemVisible>1</MenuItemVisible>
+  <ItemFlags>0</ItemFlags>
+  <Superclass>MenuItem</Superclass>
+  <MenuItem>
+   <ItemSpecialMenu>0</ItemSpecialMenu>
+   <ItemName>EditUndo</ItemName>
+   <ItemText>&amp;Undo</ItemText>
+   <ItemIndex>-2147483648</ItemIndex>
+   <ItemShortcut>Cmd+Z</ItemShortcut>
+   <MenuShortcut>Z</MenuShortcut>
+   <MenuShortcutModifier>1</MenuShortcutModifier>
+   <MenuAutoEnable>1</MenuAutoEnable>
+   <TextEncoding>134217984</TextEncoding>
+   <MenuItemVisible>1</MenuItemVisible>
+   <ItemFlags>0</ItemFlags>
+   <Superclass>MenuItem</Superclass>
+  </MenuItem>
+  <MenuItem>
+   <ItemSpecialMenu>0</ItemSpecialMenu>
+   <ItemName>EditSeparator1</ItemName>
+   <ItemText>-</ItemText>
+   <ItemIndex>-2147483648</ItemIndex>
+   <ItemShortcut></ItemShortcut>
+   <MenuAutoEnable>1</MenuAutoEnable>
+   <TextEncoding>134217984</TextEncoding>
+   <MenuItemVisible>1</MenuItemVisible>
+   <ItemFlags>0</ItemFlags>
+   <Superclass>MenuItem</Superclass>
+  </MenuItem>
+  <MenuItem>
+   <ItemSpecialMenu>0</ItemSpecialMenu>
+   <ItemName>EditCut</ItemName>
+   <ItemText>Cu&amp;t</ItemText>
+   <ItemIndex>-2147483648</ItemIndex>
+   <ItemShortcut>Cmd+X</ItemShortcut>
+   <MenuShortcut>X</MenuShortcut>
+   <MenuShortcutModifier>1</MenuShortcutModifier>
+   <MenuAutoEnable>1</MenuAutoEnable>
+   <TextEncoding>134217984</TextEncoding>
+   <MenuItemVisible>1</MenuItemVisible>
+   <ItemFlags>0</ItemFlags>
+   <Superclass>MenuItem</Superclass>
+  </MenuItem>
+  <MenuItem>
+   <ItemSpecialMenu>0</ItemSpecialMenu>
+   <ItemName>EditCopy</ItemName>
+   <ItemText>&amp;Copy</ItemText>
+   <ItemIndex>-2147483648</ItemIndex>
+   <ItemShortcut>Cmd+C</ItemShortcut>
+   <MenuShortcut>C</MenuShortcut>
+   <MenuShortcutModifier>1</MenuShortcutModifier>
+   <MenuAutoEnable>1</MenuAutoEnable>
+   <TextEncoding>134217984</TextEncoding>
+   <MenuItemVisible>1</MenuItemVisible>
+   <ItemFlags>0</ItemFlags>
+   <Superclass>MenuItem</Superclass>
+  </MenuItem>
+  <MenuItem>
+   <ItemSpecialMenu>0</ItemSpecialMenu>
+   <ItemName>EditPaste</ItemName>
+   <ItemText>&amp;Paste</ItemText>
+   <ItemIndex>-2147483648</ItemIndex>
+   <ItemShortcut>Cmd+V</ItemShortcut>
+   <MenuShortcut>V</MenuShortcut>
+   <MenuShortcutModifier>1</MenuShortcutModifier>
+   <MenuAutoEnable>1</MenuAutoEnable>
+   <TextEncoding>134217984</TextEncoding>
+   <MenuItemVisible>1</MenuItemVisible>
+   <ItemFlags>0</ItemFlags>
+   <Superclass>MenuItem</Superclass>
+  </MenuItem>
+  <MenuItem>
+   <ItemSpecialMenu>0</ItemSpecialMenu>
+   <ItemName>EditClear</ItemName>
+   <ItemText>#App.kEditClear</ItemText>
+   <ItemIndex>-2147483648</ItemIndex>
+   <ItemShortcut></ItemShortcut>
+   <MenuAutoEnable>1</MenuAutoEnable>
+   <TextEncoding>134217984</TextEncoding>
+   <MenuItemVisible>1</MenuItemVisible>
+   <ItemFlags>0</ItemFlags>
+   <Superclass>MenuItem</Superclass>
+  </MenuItem>
+  <MenuItem>
+   <ItemSpecialMenu>0</ItemSpecialMenu>
+   <ItemName>EditSeparator2</ItemName>
+   <ItemText>-</ItemText>
+   <ItemIndex>-2147483648</ItemIndex>
+   <ItemShortcut></ItemShortcut>
+   <MenuAutoEnable>1</MenuAutoEnable>
+   <TextEncoding>134217984</TextEncoding>
+   <MenuItemVisible>1</MenuItemVisible>
+   <ItemFlags>0</ItemFlags>
+   <Superclass>MenuItem</Superclass>
+  </MenuItem>
+  <MenuItem>
+   <ItemSpecialMenu>0</ItemSpecialMenu>
+   <ItemName>EditSelectAll</ItemName>
+   <ItemText>Select &amp;All</ItemText>
+   <ItemIndex>-2147483648</ItemIndex>
+   <ItemShortcut>Cmd+A</ItemShortcut>
+   <MenuShortcut>A</MenuShortcut>
+   <MenuShortcutModifier>1</MenuShortcutModifier>
+   <MenuAutoEnable>1</MenuAutoEnable>
+   <TextEncoding>134217984</TextEncoding>
+   <MenuItemVisible>1</MenuItemVisible>
+   <ItemFlags>0</ItemFlags>
+   <Superclass>MenuItem</Superclass>
+  </MenuItem>
+ </MenuItem>
+</block>
+<block type="BuildAutomation" ID="1199439871">
+ <ObjName>Build Automation</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+</block>
+<block type="BuildStepsList" ID="186073087">
+ <ObjName>Linux</ObjName>
+ <ObjContainerID>1199439871</ObjContainerID>
+</block>
+<block type="BuildProjectStep" ID="1709207551">
+ <ObjName>Build</ObjName>
+ <ObjContainerID>186073087</ObjContainerID>
+</block>
+<block type="BuildStepsList" ID="1712343039">
+ <ObjName>Mac OS X</ObjName>
+ <ObjContainerID>1199439871</ObjContainerID>
+</block>
+<block type="BuildProjectStep" ID="982788095">
+ <ObjName>Build</ObjName>
+ <ObjContainerID>1712343039</ObjContainerID>
+</block>
+<block type="BuildStepsList" ID="1234051071">
+ <ObjName>Windows</ObjName>
+ <ObjContainerID>1199439871</ObjContainerID>
+</block>
+<block type="BuildProjectStep" ID="1096570879">
+ <ObjName>Build</ObjName>
+ <ObjContainerID>1234051071</ObjContainerID>
+</block>
+<block type="UIState" ID="0">
+ <StudioWindowState>
+  <EditBounds><Rect left="539" top="116" width="1310" height="891"/></EditBounds>
+  <WindowMaximized>0</WindowMaximized>
+  <Editors>
+   <EditorCount>1</EditorCount>
+   <Editor>
+    <EditorIndex>0</EditorIndex>
+    <EditorLocation>Window1.Controls.Canvas1.Paint</EditorLocation>
+    <EditorPath></EditorPath>
+    <EditingPartID>1948000255</EditingPartID>
+    <EditorPath></EditorPath>
+   </Editor>
+   <SelectedTab>0</SelectedTab>
+  </Editors>
+ </StudioWindowState>
+</block>
+</RBProject>
