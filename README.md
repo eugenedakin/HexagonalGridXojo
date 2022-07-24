@@ -5,3 +5,5 @@ This article is an adaptation of C# code to Xojo code and the C# article was ori
 
 https://scispec.ca/index.php/blog/45-draw-a-hexagonal-grid-in-xojo
 This was created with Xojo 2019 v1.1
+
+![](https://github.com/eugenedakin/HexagonalGridXojo/blob/master/HexScreenGrab.png)
